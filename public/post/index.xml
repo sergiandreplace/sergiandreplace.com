@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Sergi &amp; Replace</title>
+    <link>https://sergiandreplace.github.io/post/</link>
+    <description>Recent content in Posts on Sergi &amp; Replace</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
+    <lastBuildDate>Fri, 23 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://sergiandreplace.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome back!</title>
+      <link>https://sergiandreplace.github.io/post/welcome/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sergiandreplace.github.io/post/welcome/</guid>
+      <description>I&amp;rsquo;m restarting my blog. Trying to use Hugo to have a nice static blog.
+$ ls  </description>
+    </item>
+    
+  </channel>
+</rss>

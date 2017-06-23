@@ -1,0 +1,36 @@
+baseURL = "https://sergiandreplace.github.io/"
+languageCode = "en-us"
+title = "Sergi & Replace"
+theme = "hugo-minimalist-theme"
+# Define how many pages appear per site
+paginate = 10
+# Enable comments powered by Disqus by entering your disqus shortname
+# Enable gogle analytics by entering your tracking code
+googleAnalytics = ""
+
+[params]
+    site_author = "Sergi Martínez"
+    site_description = "Look Ma! I'm on the internet!"
+    location = "Earth"
+    # Link custom assets relative to /static
+    avatar = "img/profile-image.png"
+    header_background = "img/desk.jpg"
+    header_title = "Sergi & Replace"
+    copyright = "Powered by [Hugo](http://gohugo.io)."
+    custom_css = []
+    custom_js  = []
+
+    # Enable gogle analytics by entering your tracking code
+    google_analytics = ""
+[social]
+    # Add your social network accounts to the profile section on the left
+    # by entering your username. The links to your account will be
+    # create automatically.
+    twitter   = "sergiandreplace"
+    facebook  = ""
+    linkedin  = ""
+    behance   = ""
+    dribbble  = ""
+    instagram = ""
+    github    = "sergiandreplace"
+    gplus     = "sergiandreplace"
