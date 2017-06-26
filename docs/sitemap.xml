@@ -3,17 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://sergiandreplace.github.io/categories/</loc>
+    <loc>http://sergiandreplace.com/post/welcome/</loc>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sergiandreplace.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergiandreplace.github.io/</loc>
+    <loc>http://sergiandreplace.com/post/</loc>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://sergiandreplace.github.io/tags/</loc>
+    <loc>http://sergiandreplace.com/</loc>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sergiandreplace.com/tags/start/</loc>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sergiandreplace.com/tags/</loc>
+    <lastmod>2017-06-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

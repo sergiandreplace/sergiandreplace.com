@@ -1,4 +1,4 @@
-baseURL = "http://sergiandreplace.com"
+baseURL = "http://sergiandreplace.com/"
 languageCode = "en-us"
 title = "Sergi & Replace"
 theme = "hugo-minimalist-theme"
@@ -15,8 +15,8 @@ publishDir = "docs"
     site_description = "Look Ma! I'm on the internet!"
     location = "Barcelona"
     # Link custom assets relative to /static
-    avatar = "img/profile-image.png"
-    header_background = "img/desk.jpg"
+    avatar = "img/me.png"
+    header_background = "img/header.jpg"
     header_title = "Sergi & Replace"
     copyright = "Powered by [Hugo](http://gohugo.io)."
     custom_css = []

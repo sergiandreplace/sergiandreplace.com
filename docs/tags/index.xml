@@ -2,14 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sergi &amp; Replace</title>
-    <link>https://sergiandreplace.github.io/tags/</link>
+    <link>http://sergiandreplace.com/tags/</link>
     <description>Recent content in Tags on Sergi &amp; Replace</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Powered by [Hugo](http://gohugo.io).</copyright>
+    <lastBuildDate>Fri, 23 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://sergiandreplace.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sergiandreplace.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Start</title>
+      <link>http://sergiandreplace.com/tags/start/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://sergiandreplace.com/tags/start/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
