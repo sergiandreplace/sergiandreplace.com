@@ -1,6 +1,6 @@
 +++
 date = "2017-06-23"
-draft = true
+draft = false
 title = "Startint with Kotlin"
 tags = ["Android", "Kotlin"]
 +++
