@@ -1,14 +1,10 @@
 +++
 date = "2017-06-23"
 draft = false
-title = "Startint with Kotlin"
-tags = ["Android", "Kotlin"]
+title = "Flutter: from design to app"
+tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 +++
 
-I'm restarting my blog. Trying to use Hugo to have a nice static blog.
+# Flutter: from design to app
 
----
-
-```
-$ ls
-```
+hello
