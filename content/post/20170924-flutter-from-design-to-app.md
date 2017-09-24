@@ -250,7 +250,7 @@ Resulting on a nice App bar:
 
 ![A really cool header](/img/planets-final-appbar.png)
 
-** To be continued...
+*** To be continued...
 
 Enough for today, and we learned a lot of things:
 
