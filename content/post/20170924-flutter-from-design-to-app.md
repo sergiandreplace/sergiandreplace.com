@@ -6,12 +6,18 @@ tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
 +++
 
-After falling in love with Flutter during the Android Developer Days in Krakow, I've decided to start a set of samples on how to create Flutter apps from a design.
+Flutter is the new, shiny and cool way to write apps for Android and iOS. 
+
+I felt in love with Flutter during the Android Developer Days in Krakow, and I've decided to start a set of samples on how to create Flutter apps from a design. 
+
+I've spent several days playing with it, aaaand, this is the result.
+
+<!--more--> 
 
 After browsing for a while on [material.uplabs.com](http://material.uplabs.com), I've picked up a nice sample on a Space Travel book app from Vijay Verma: 
 https://www.uplabs.com/posts/space-travel-ui. Checkout his other designs, they are really cool.
 
-After contacting him, he send me the original assets. (Thanks Vijay!)
+I've contact him, and he send me the original assets. (Thanks Vijay!)
 
 Here a sample of what we are going to achieve:
 

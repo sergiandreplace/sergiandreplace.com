@@ -7,7 +7,7 @@ paginate = 10
 # Enable comments powered by Disqus by entering your disqus shortname
 disqusShortname = "sergiandreplace"
 # Enable gogle analytics by entering your tracking code
-googleAnalytics = ""
+googleAnalytics = "UA-203854-6"
 publishDir = "docs"
 
 [permalinks]
@@ -113,18 +113,21 @@ publishDir = "docs"
   coverImage = "cover.jpg"
 
   # Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
-  imageGallery = false
+  imageGallery = true
 
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
-  thumbnailImage = false
+  thumbnailImage = true
+
   # Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`)
   # Set this value to `right` if you have old posts to keep the old style on them
   # and define `thumbnailImagePosition` on a post to overwrite this setting
+
   thumbnailImagePosition = "bottom"
+
   # Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image
   # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
   # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
-  autoThumbnailImage = false
+  autoThumbnailImage = true
 
   # Your favicon path, default is "/favicon.png"
   # favicon = "/favicon.png"
