@@ -3,6 +3,7 @@ date = "2017-09-24"
 draft = false
 title = "Planets-Flutter: from design to app"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
+categories = ["Flutter"]
 +++
 
 After falling in love with Flutter during the Android Developer Days in Krakow, I've decided to start a set of samples on how to create Flutter apps from a design.
