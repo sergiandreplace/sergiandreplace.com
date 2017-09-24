@@ -5,6 +5,7 @@ theme = "hugo-tranquilpeak-theme"
 # Define how many pages appear per site
 paginate = 10
 # Enable comments powered by Disqus by entering your disqus shortname
+disqusShortname = "sergiandreplace"
 # Enable gogle analytics by entering your tracking code
 googleAnalytics = ""
 publishDir = "docs"
