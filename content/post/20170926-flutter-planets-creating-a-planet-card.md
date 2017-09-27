@@ -233,7 +233,7 @@ And that should give you a nice card like this:
 
 If you want to have more than one card as in the screenshot, just add more instance of ```HomePageBody``` in the children list of the Column in ```HombePage``` class:
 
-```
+```dart
 class HomePage extends StatelessWidget {
 
   @override
