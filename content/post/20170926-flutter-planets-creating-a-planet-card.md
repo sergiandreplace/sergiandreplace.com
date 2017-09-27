@@ -6,13 +6,19 @@ tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
 +++
 
+** Previously, on sergiandreplace.com
+
 In the previous article we saw how to create a custom App bar without using the class ```Appbar``` in order to make easier to get a gradient background and a centered title.
 
 Next step is to create the Widget that we will use to create the list of planets. We will work first on a hard-coded item and the we will transform it into a list of elements.
 
+** Job description
+
 Here is the card we want to build today:
 
 ![planet card](/img/planets-card-sample.png)
+
+*** Measures and densities
 
 The original design is a psd file, and the phone screen measures 1080 x 1800. If we check at [Device Metrics website](https://material.io/devices/) we can see that mobile devices with 1080 x 1920 (our screen size plus status bar more or less) have mostly a density of 3.0 and some 2.6. So for the sake of simplicity, we will use 3 as our density factor. That means that we will divide all measures between 3 to transform from pixels to dp.
 
@@ -124,6 +130,8 @@ class PlanetRow extends StatelessWidget {
 
 Much cleaner and concise. And now, for the content.
 
+** Setting up the row
+
 The row consists of two objects, the planet image and a blue rectangle with the text. As the planet overlaps the rectangle, the best is to put them in a ```Stack``` widget. The ```Stack``` widget just puts elements one in top of the other in the z-axis.
 
 ```dart
@@ -148,6 +156,8 @@ class PlanetRow extends StatelessWidget {
 ```
 
 We will define what planetCard and planetThumbnail are in a moment. Notice that, as the card goes below the thumbnail, it should be declared first.
+
+** The planet image
 
 The ```planetThumbnail```is just a simple image. We will take put it in assets/img folder and declare it in the pubspec.yaml:
 
@@ -179,6 +189,8 @@ Let's review it. We have a ```Container``` with an ```Image``` as single child. 
 The ```Image``` class needs a Provider to serve the image itself. As our image is a declared asset, we use AssetImage with the path to our image.
 
 Finally, we set the size of the image as per design.
+
+** A decorated card
 
 And now, the card:
 
@@ -240,6 +252,8 @@ class HomePage extends StatelessWidget {
   }
 }
 ```
+
+** To be continued...
 
 Enough for today. We learned a lot of things:
 
