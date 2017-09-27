@@ -1,32 +1,32 @@
 +++
-date = "2019-09-30"
+date = "2017-09-30"
 draft = true
 title = "Planets-Flutter: creating a Planet card"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
 +++
 
-** Previously, on sergiandreplace.com
+## Previously, on sergiandreplace.com
 
 In the previous article we saw how to create a custom App bar without using the class ```Appbar``` in order to make easier to get a gradient background and a centered title.
 
 Next step is to create the Widget that we will use to create the list of planets. We will work first on a hard-coded item and the we will transform it into a list of elements.
 
-** Job description
+## Job description
 
 Here is the card we want to build today:
 
 ![planet card](/img/planets-card-sample.png)
 
-*** Measures and densities
+### Measures and densities
 
-The original design is a psd file, and the phone screen measures 1080 x 1800. If we check at [Device Metrics website](https://material.io/devices/) we can see that mobile devices with 1080 x 1920 (our screen size plus status bar more or less) have mostly a density of 3.0 and some 2.6. So for the sake of simplicity, we will use 3 as our density factor. That means that we will divide all measures between 3 to transform from pixels to dp.
+The original design is a psd file, and the phone screen measures 1080 x 1800. If we check at [Device Metrics website](https://material.io/devices/) we can see that mobile devices with 1080 x 1920 (our screen size plus status bar more or less) have mostly a density of 3.0 and some 2.6. So for the sake of simplicity, we will use 3 as our density factor. That means that we will divide all measures by 3 to transform from pixels to dp.
 
 You can see all sizes for the card margins in this image:
 
 ![planet card with measures](/img/planets-card-measure.png)
 
-Top row and left column are measures in pixels, and bottom row and right corner are measures in dp.
+Top and left figures are measures in pixels, and bottom and right ones are measures in dp.
 
 So, let's back to our last code and work from there. In the ```HomePage``` class, we add a new element to the ```Column``` in the ```Scaffold``` body:
 
@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
 }
 ```
 
-As you may see, we added a new import to a file named HomePageBody.dart and instantiated a new HomePageBody object and added it to the ```Column``` children.
+As you may see, we added a new import to a file named HomePageBody.dart, instantiated a new HomePageBody object and added it to the ```Column``` children.
 
 Create the file HomePageBody.dart and let's go for it with a basic structure:
 
@@ -84,7 +84,7 @@ Starting to see the pattern?
 
 ## Borders
 
-For the container, we will set the margins, in this case, 24dp for left and right, and 16dp for top and bottom. Keep in mind that the separation between cells is 32 dp, but as we will pile them, we need to share it between the bottom border of each one and the top border of the next to sum 32 dp.
+We will set the margins for the container following what design marks, 24dp for left and right, and 16dp for top and bottom. Keep in mind that the separation between cells is 32 dp, but as we will pile them, we need to share it between the bottom border of each one and the top border of the next to sum 32 dp.
 
 This will left us with a minor top margin for first item and bottom margin for last one. We'll see how to fix this when creating the list.
 
@@ -130,9 +130,9 @@ class PlanetRow extends StatelessWidget {
 
 Much cleaner and concise. And now, for the content.
 
-** Setting up the row
+## Setting up the row
 
-The row consists of two objects, the planet image and a blue rectangle with the text. As the planet overlaps the rectangle, the best is to put them in a ```Stack``` widget. The ```Stack``` widget just puts elements one in top of the other in the z-axis.
+The row consists of two objects, the planet image and a blue rectangle with the text. As the planet overlaps the rectangle, the best way to organize them is to put them in a ```Stack``` widget. The ```Stack``` widget just puts elements one in top of the other in the z-axis.
 
 ```dart
 class PlanetRow extends StatelessWidget {
@@ -155,11 +155,11 @@ class PlanetRow extends StatelessWidget {
 }
 ```
 
-We will define what planetCard and planetThumbnail are in a moment. Notice that, as the card goes below the thumbnail, it should be declared first.
+We will define what planetCard and planetThumbnail are in a moment. Notice that, as the card goes behind the thumbnail, it should be declared first.
 
-** The planet image
+## The planet image
 
-The ```planetThumbnail```is just a simple image. We will take put it in assets/img folder and declare it in the pubspec.yaml:
+The ```planetThumbnail```is just a simple image. We will put it in assets/img folder and declare it in the pubspec.yaml:
 
 ```
   assets:
@@ -168,7 +168,7 @@ The ```planetThumbnail```is just a simple image. We will take put it in assets/i
 
 You can get the file from [here](https://raw.githubusercontent.com/sergiandreplace/planets-flutter/master/assets/img/mars.png).
 
-Now we can declare it using the sizes and margins we take from the design.
+Now we can declare it using the sizes and margins from the design.
 
 ```dart
   final planetThumbnail = new Container(
@@ -190,7 +190,7 @@ The ```Image``` class needs a Provider to serve the image itself. As our image i
 
 Finally, we set the size of the image as per design.
 
-** A decorated card
+## A decorated card
 
 And now, the card:
 
@@ -253,14 +253,14 @@ class HomePage extends StatelessWidget {
 }
 ```
 
-** To be continued...
+## To be continued...
 
 Enough for today. We learned a lot of things:
 
-* How to use measures from design. If you use a bitmap based tool like Photoshop, just pickup your density and divide measures by the density (**Pro trick**: Designers are people, talk to them, achieve agreements in thinks like the size they used and what density are they emulating. They don't bite, well, some of them at least).
+* How to use measures from design. If you use a bitmap based tool like Photoshop, just pickup your density and divide measures by the density (**Pro trick**: Designers are people, talk to them, achieve agreements in thinks like the size they use and what density are they emulating. They don't bite, well, some of them at least).
 * How to define margins in different ways, Dart multiple named constructors are made to bring joy to the world.
 * How to use an image from an asset
 * Doing decorations to get colors, borders, rounded corners, shadows. Play with it, explore, it's cool.
 * How to translate a shadow from Photoshop to Flutter.
 
-Next steps are bringing content to the planet card and make a list of it, and from that, to the detail. Keep tuned!
+Next steps are bringing content to the planet card and make a list of it, and from that, to the detail. Stay tuned!
