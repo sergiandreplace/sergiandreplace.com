@@ -10,6 +10,9 @@ disqusShortname = "sergiandreplace"
 googleAnalytics = "UA-203854-6"
 publishDir = "docs"
 
+pygmentsUseClasses=true
+pygmentsCodeFences=true
+
 [permalinks]
   post = "/:year/:month/:slug/"
 
@@ -179,4 +182,7 @@ publishDir = "docs"
   # Customize copyright value "© 2016 <CUSTOMIZATION>. All Rights Reserved"
   # [params.footer]
   #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
+  
+  [params.customCSS]
+  url = "/syntax.css"
 
