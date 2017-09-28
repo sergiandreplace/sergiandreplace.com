@@ -10,6 +10,10 @@ disqusShortname = "sergiandreplace"
 googleAnalytics = "UA-203854-6"
 publishDir = "docs"
 
+# Enable syntax highlighting in code fences
+# see https://gohugo.io/content-management/syntax-highlighting/#highlight-in-code-fences
+pygmentsCodeFences=true
+
 [permalinks]
   post = "/:year/:month/:slug/"
 
