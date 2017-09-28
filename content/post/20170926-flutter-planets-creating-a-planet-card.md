@@ -1,6 +1,6 @@
 +++
-date = "2017-09-30"
-draft = true
+date = "2017-09-28"
+draft = false
 title = "Planets-Flutter: creating a Planet card"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
@@ -70,8 +70,7 @@ class HomePageBody extends StatelessWidget {
 
 Again, we are just placing an element of type PlanetRow and importing the file PlanetRow.dart. Now we can create it with a simple base:
 
-```dart
-import 'package:flutter/material.dart';
+dgddgggggggggwgfpppimport 'package:flutter/material.dart';
 
 class PlanetRow extends StatelessWidget {
   @override
