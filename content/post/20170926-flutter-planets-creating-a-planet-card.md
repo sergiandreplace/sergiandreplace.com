@@ -56,7 +56,7 @@ As you may see, we added a new import to a file named HomePageBody.dart, instant
 
 Create the file HomePageBody.dart and let's go for it with a basic structure:
 
-```dart
+{{< highlight dart "linenos=true">}}
 import 'package:flutter/material.dart';
 import 'package:planets/ui/home/PlanetRow.dart';
 
@@ -66,11 +66,12 @@ class HomePageBody extends StatelessWidget {
     return new PlanetRow();
   }
 }
-```
+{{< / highlight >}}
 
 Again, we are just placing an element of type PlanetRow and importing the file PlanetRow.dart. Now we can create it with a simple base:
 
-dgddgggggggggwgfpppimport 'package:flutter/material.dart';
+{{< highlight dart "linenos=true">}}
+import 'package:flutter/material.dart';
 
 class PlanetRow extends StatelessWidget {
   @override
@@ -78,7 +79,7 @@ class PlanetRow extends StatelessWidget {
     return new Container();
   }
 }
-```
+{{< / highlight >}}
 
 Starting to see the pattern?
 
@@ -162,10 +163,10 @@ We will define what planetCard and planetThumbnail are in a moment. Notice that,
 
 The ```planetThumbnail```is just a simple image. We will put it in assets/img folder and declare it in the pubspec.yaml:
 
-```
+{{< highlight yaml >}}
   assets:
     - assets/img/mars.png
-```
+{{< / highlight >}}
 
 You can get the file from [here](https://raw.githubusercontent.com/sergiandreplace/planets-flutter/master/assets/img/mars.png).
 
