@@ -10,6 +10,12 @@ disqusShortname = "sergiandreplace"
 googleAnalytics = "UA-203854-6"
 publishDir = "docs"
 
+pygmentsUseClasses=true
+pygmentsCodeFences=true
+
+[params.customCSS]
+url = "/syntax.css"
+
 [permalinks]
   post = "/:year/:month/:slug/"
 
