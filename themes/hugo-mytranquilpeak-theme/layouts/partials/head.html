@@ -57,20 +57,20 @@
     {{ end }}{{ end }}
     
     {{ if .Scratch.Get "gravatarEmail" }}
-    <meta property="twitter:image" content="//www.gravatar.com/avatar/{{ (md5 (.Scratch.Get "gravatarEmail")) | urlize }}?s=640">
+    <meta name="twitter:image" content="//www.gravatar.com/avatar/{{ (md5 (.Scratch.Get "gravatarEmail")) | urlize }}?s=640">
     {{ else if .Site.Author.picture }}
-    <meta property="twitter:image" content="{{ .Site.Author.picture | absURL }}">
+    <meta name="twitter:image" content="{{ .Site.Author.picture | absURL }}">
     {{ end }}
 
     {{ with .Params.thumbnailImage }}
-    <meta property="twitter:image" content="{{ . | absURL }}">
+    <meta name="twitter:image" content="{{ . | absURL }}">
     {{ end }}
     {{ with .Params.coverImage }}
-    <meta property="twitter:image" content="{{ . | absURL }}">
+    <meta name="twitter:image" content="{{ . | absURL }}">
     {{ end }}
     {{ with .Params.gallery }}
       {{ range . }}
-    <meta property="twitter:image" content="{{ range first 1 (split . " ") }}{{ . | absURL }}{{ end }}">
+    <meta name="twitter:image" content="{{ range first 1 (split . " ") }}{{ . | absURL }}{{ end }}">
       {{ end }}
     {{ end }}
     
