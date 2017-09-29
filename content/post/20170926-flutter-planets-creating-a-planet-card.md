@@ -172,7 +172,7 @@ You can get the file from [here](https://raw.githubusercontent.com/sergiandrepla
 
 Now we can declare it using the sizes and margins from the design.
 
-```dart
+{{< highlight dart "linenos=true">}}
   final planetThumbnail = new Container(
     margin: new EdgeInsets.symmetric(
       vertical: 16.0
@@ -184,7 +184,7 @@ Now we can declare it using the sizes and margins from the design.
       width: 92.0,
     ),
   );
-```
+{{< / highlight >}}
 
 Let's review it. We have a ```Container``` with an ```Image``` as single child. We set a vertical margin of 16dp, and align the content to the left. Otherwise, the container will wrap to the content, and due to inheritance, it will use the minimum size possible (it will be probably corrected by the card, but.. why to risk).
 
@@ -236,7 +236,7 @@ And that should give you a nice card like this:
 
 If you want to have more than one card as in the screenshot, just add more instance of ```HomePageBody``` in the children list of the Column in ```HombePage``` class:
 
-```dart
+{{< highlight dart "linenos=true">}}
 class HomePage extends StatelessWidget {
 
   @override
@@ -254,8 +254,8 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-```
-t
+{{< / highlight >}}
+
 ## To be continued...
 
 Enough for today. We learned a lot of things:
