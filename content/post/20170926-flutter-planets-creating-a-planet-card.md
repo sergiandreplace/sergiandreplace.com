@@ -4,13 +4,15 @@ draft = false
 title = "Planets-Flutter: creating a Planet card"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
+thumbnailImage="/img/planets-card-sample.png"
 +++
 
-## Previously, on sergiandreplace.com
+## Previously, on sergiandreplace.com...
 
 In the [previous article](/2017/09/planets-flutter-from-design-to-app/) we saw how to create a custom App bar without using the class ```Appbar``` in order to make easier to get a gradient background and a centered title.
 
 Next step is to create the Widget that we will use to create the list of planets. Today we will work  on a hard-coded item, to be able to transform it into a list of elements in the future.
+<!--more--> 
 
 ## Job description
 

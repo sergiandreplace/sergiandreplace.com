@@ -1,23 +1,26 @@
-baseURL = "http://sergiandreplace.com/"
+# Tranquilpeak
+# Version : 0.4.1-BETA
+# Author : Thibaud Leprêtre
+
+# I STRONGLY recommend you to use a CDN to speed up loading of pages.
+# There is many free CDN like Cloudinary or you can also use indirectly
+# by using services like Google Photos.
+
+# If you want to store images yourself, please read this guidelines:
+# For users, if you only use this theme, put your images directly in `source/assets/images` folder
+# But if you want to add local images, you can put your images directly in `source/assets/images` folder
+# For developpers, if you modify this theme, put your images in `source/images` folder and
+# use grunt task `build` to synchronize assets
+
+baseurl = ""
 languageCode = "en-us"
-title = "Sergi & Replace"
-theme = "hugo-mytranquilpeak-theme"
-# Define how many pages appear per site
-paginate = 10
-# Enable comments powered by Disqus by entering your disqus shortname
-disqusShortname = "sergiandreplace"
-# Enable gogle analytics by entering your tracking code
-googleAnalytics = "UA-203854-6"
-publishDir = "docs"
-
-pygmentsUseClasses=true
-pygmentsCodeFences=true
-[params.Author]
-twitter="sergiandreplace"
-
-
-[params.customCSS]
-url = "/syntax.css"
+defaultContentLanguage = "en-us"
+title = "Hugo tranquilpeak theme"
+theme = "hugo-tranquilpeak-theme"
+disqusShortname = "hugo-tranquilpeak-theme"
+# googleAnalytics = "UA-123-45"
+paginate = 7
+canonifyurls = true
 
 [permalinks]
   post = "/:year/:month/:slug/"
@@ -26,6 +29,21 @@ url = "/syntax.css"
   tag = "tags"
   category = "categories"
   archive = "archives"
+
+[author]
+  name = "Firstname Lastname"
+  bio = "Super bio with markdown support **COOL**"
+  job = "Your job title"
+  location = "France"
+  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
+  gravatarEmail = "thibaud.lepretre@gmail.com"
+  # Your profile picture
+  # Overwritten by your gravatar image if `author.gravatarEmail` is filled
+  picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
+  # Your Twitter username without the @. E.g : thibaudlepretre
+  # twitter = "thibaudlepretre"
+  # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
+  # googlePlus = "+ThibaudLepretre"
 
 # Menu Configuration
 [[menu.main]]
@@ -64,13 +82,13 @@ url = "/syntax.css"
   identifier = "github"
   name = "GitHub"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
-  url = "https://github.com/sergiandreplace"
+  url = "https://github.com/kakawait"
 [[menu.links]]
   weight = 2
   identifier = "stackoverflow"
   name = "Stack Overflow"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
-  url = "https://stackoverflow.com/users/462615"
+  url = "https://stackoverflow.com/users/636472/kakawait"
 
 [[menu.misc]]
   weight = 1
@@ -79,7 +97,7 @@ url = "/syntax.css"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
   url = "/index.xml"
 
-  [params]
+[params]
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
@@ -96,7 +114,7 @@ url = "/syntax.css"
   # If false it will flat categories.
   hierarchicalCategories = true
 
-  description = "Sergiandreplace.com"
+  description = "Hugo tranquilpeak theme demo"
 
   # Customization
   # Define the behavior of the sidebar
@@ -126,13 +144,10 @@ url = "/syntax.css"
 
   # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
   thumbnailImage = true
-
   # Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`)
   # Set this value to `right` if you have old posts to keep the old style on them
   # and define `thumbnailImagePosition` on a post to overwrite this setting
-
   thumbnailImagePosition = "bottom"
-
   # Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image
   # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
   # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
@@ -188,4 +203,3 @@ url = "/syntax.css"
   # Customize copyright value "© 2016 <CUSTOMIZATION>. All Rights Reserved"
   # [params.footer]
   #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
-
