@@ -173,7 +173,6 @@ Let's add the rest of fields to the card.
 
 
 
-
 ## Making a list
 
 Flutter uses the ListView widget to create lists and scrollable items. It's easy to think this is like Android ListView/RecyclerView component, but in fact, it's most similar to the ScrollView. You can create a list with static items like this:
