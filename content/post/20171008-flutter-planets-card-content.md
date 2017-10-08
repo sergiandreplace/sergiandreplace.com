@@ -7,7 +7,7 @@ categories = ["Flutter"]
 thumbnailImage="/img/planet-card-full-text.png"
 +++
 
-In the previous article we learned how to create a card to show information for a planet. Now is time to put the planet information in the card.
+In the previous article, we learned how to create a card to show some information about a planet. Now it is time to put that information in the card.
 
 <!--more--> 
 
@@ -19,7 +19,7 @@ We want to be able to provide the planet info to `PlanetRow` widget and see it p
 
 As the list of planets is static and the data won't change, creating this information from code will be enough.
 
-First we create a class to hold information for a single planet:
+First, we create a class to hold information for a single planet:
 
 {{< highlight dart "linenos=true">}}
 class Planet {
@@ -90,9 +90,9 @@ List<Planet> planets = [
 ];
 {{< / highlight>}}
 
-As you see, all the info is just mocked data. I invite you to put the real information if you want to.
+As you see, all the info is just mocked data. I invite you to use the real information if you want to.
 
-Also, we place the images on the img folder. Find all them in the repository.
+Also, we place the images on the img folder. Find all of them in the repository.
 
 Ok, now we are ready to modify the PlanetRow class.
 
@@ -128,9 +128,9 @@ class PlanetRow extends StatelessWidget {
 }
 {{< / highlight >}}
 
-First we add a parameter to the constructor that receives a `Planet` object and stores it in a final field.
+First, we add a parameter to the constructor that receives a `Planet` object and stores it in a final field.
 
-Next, we will modify the planetThumbnail:
+Next step, we will modify the planetThumbnail:
 
 {{< highlight dart "linenos=true, hl_lines=7">}}
   final planetThumbnail = new Container(
@@ -146,7 +146,7 @@ Next, we will modify the planetThumbnail:
   );
 {{< / highlight >}}
 
-The only change we did is to modify the thumbnail path from a constant to the field image in the Planet object we received.
+The only change we have applied is to modify the thumbnail path from a constant to the field image in the Planet object we received.
 
 Also, in the previous article, we declared planetThumbnail and planetCard as final class members, in order to be able to reference the planet field, this declaration should be moved into the build function.
 
@@ -160,13 +160,13 @@ class HomePageBody extends StatelessWidget {
 }
 {{< / highlight >}}
 
-And last, modify the creation of PlanetRow in HomePageBody to give a planet of the array to it. You can try to change the 0 to another number to see how the thumbnail works.
+And finally, we modify the creation of PlanetRow in HomePageBody to give a planet of the array to it. You can try to change the 0 to another number to see how the thumbnail works.
 
 Let's add the rest of fields to the card.
 
 ## A cute card
 
-As we will be using three different text styles, we will create them as constant and reuse them later.
+As we will be using three different text styles, we will create them as constants and reuse them later.
 
 ### Text styling
 
@@ -230,7 +230,7 @@ I've modified some of the margins on the design to get better dp sizes (basicall
 
 ![card content measures](/img/planet-card-content-measures.png)
 
-The result is this:
+The result is the following code:
 
 {{< highlight dart >}}
 final planetCardContent = new Container(
@@ -277,19 +277,19 @@ final planetCardContent = new Container(
 What is hapenning here?
 
 * We create a container that will be the base widget for the whole content.
-* We define the margins as per design
+* We define the margins as per design.
 * We have to define a constraint (`BoxConstraints.expand()`), otherwise, the container will adjust to the minimum size required by its children, and we want it to get the whole row.
 * As each text is below the other, we use a Column to dispose them.
-* We use empty containers to create the separation between text elements
-* First element shows the name of the planet using `headerTextStyle`
-* Second element shows the location of the planet using `subHeaderTextStyle`
+* We use empty containers to create the separation between text elements.
+* First element shows the name of the planet using `headerTextStyle`.
+* Second element shows the location of the planet using `subHeaderTextStyle`.
 * We use a single container to create the blue line, just specifying the margins and size of it, and giving the appropiate background color.
-* The gravity and distance should be put in a Row, as they flow horizontally
-* Each consist on an icon from assets, a separation container, and a text
+* The gravity and distance should be put in a Row, as they flow horizontally.
+* Each <what?> consists on an icon from assets, a separation container, and a text.
 
 There is a much more convenient way of doing the row of values (gravity and distance).
 
-Imagine we want the second value to always start in the center, despite the width of the row. For this, we have to use a Expanded widget:
+Imagine we want the second value to always start in the center, despite the width of the row. In order to achieve this, we have to use a Expanded widget:
 
 {{< highlight dart >}}
           new Row(
@@ -316,7 +316,7 @@ Imagine we want the second value to always start in the center, despite the widt
           ),
 {{< / highlight >}}
 
-Now, the row contains two Expanded widgets. And they will share the space to fill at 50%. As the content aligns to left, the second one will always start at center.
+Now, the row contains two Expanded widgets. And they will share the space to fill at 50%. As the content aligns to the left, the second one will always start at the center.
 
 As both contents are very similar, we can extract them to a function:
 
@@ -351,7 +351,7 @@ So, the final row looks like this:
           )
 {{< / highlight >}}
 
-Looks cleaner to me.
+It looks cleaner to me.
 
 The final result now looks like this:
 
@@ -359,17 +359,17 @@ The final result now looks like this:
 
 ## To be continued
 
-In this episode we learned several things related to layout and styling:
+In this episode we have learned several things related to layout and styling:
 
-* how to use different weights of the same font. If you come from Android native development, this looks like a small miracle ;)
-* how to simplify text styling by overriding styles. We will see a lot more on how to make this even easier and clean.
-* created and used a small data source so we can paint any planet
-* using constrains in a container to make it expand
-* using the expanded widget to distribute items equally
+* How to use different weights of the same font. If you come from Android native development, this looks like a small miracle ;).
+* How to simplify text styling by overriding styles. We will see a lot more on how to make this even easier and cleaner.
+* How to create and use a small data source so that we can paint any planet.
+* Using constrains in a container to make it expand.
+* Using the expanded widget to distribute items equally.
 
-The whole code for this project is uploaded into the [flutter-planets-tutorial](https://github.com/sergiandreplace/flutter_planets_tutorial) repository, and this article is in the branch [Lesson_3_Planets-Flutter_adding_content_to_the_card](https://github.com/sergiandreplace/flutter_planets_tutorial/tree/Lesson_3_Planets-Flutter_adding_content_to_the_card). Also you will find all the assets used in the project.
+The whole code for this project is uploaded to the [flutter-planets-tutorial](https://github.com/sergiandreplace/flutter_planets_tutorial) repository, and this article is in the branch [Lesson_3_Planets-Flutter_adding_content_to_the_card](https://github.com/sergiandreplace/flutter_planets_tutorial/tree/Lesson_3_Planets-Flutter_adding_content_to_the_card). Also, you will find all the assets used in the project.
 
-In next article, we will finally create a list of elements to show all planets info.
+In the next article, we will finally create a list of elements to show all the planets related information.
 
 Stay tuned!
 
