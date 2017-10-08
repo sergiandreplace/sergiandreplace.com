@@ -46,7 +46,7 @@ List<Planet> planets = [
     id: "1",
     name: "Mars",
     location: "Milkyway Galaxy",
-    distance: "54.6m Km",
+    distance: "227.9m Km",
     gravity: "3.711 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/mars.png",
@@ -56,7 +56,7 @@ List<Planet> planets = [
     name: "Neptune",
     location: "Milkyway Galaxy",
     distance: "54.6m Km",
-    gravity: "3.711 m/s ",
+    gravity: "11.15 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/neptune.png",
   ),
@@ -65,7 +65,7 @@ List<Planet> planets = [
     name: "Moon",
     location: "Milkyway Galaxy",
     distance: "54.6m Km",
-    gravity: "3.711 m/s ",
+    gravity: "1.622 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/moon.png",
   ),
@@ -74,7 +74,7 @@ List<Planet> planets = [
     name: "Earth",
     location: "Milkyway Galaxy",
     distance: "54.6m Km",
-    gravity: "3.711 m/s ",
+    gravity: "9.807 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/earth.png",
   ),
@@ -83,7 +83,7 @@ List<Planet> planets = [
     name: "Mercury",
     location: "Milkyway Galaxy",
     distance: "54.6m Km",
-    gravity: "3.711 m/s ",
+    gravity: "3.7 m/s ",
     description: "Lorem ipsum...",
     image: "assets/img/mercury.png",
   ),
@@ -92,13 +92,13 @@ List<Planet> planets = [
 
 As you see, all the info is just mocked data. I invite you to put the real information if you want to.
 
-Also, we place the images on the img folder. Find all them the repository.
+Also, we place the images on the img folder. Find all them in the repository.
 
 Ok, now we are ready to modify the PlanetRow class.
 
 ## A PlanetRow for all planets
 
-Now we need to make the PlanetCard to be able to receive one Planet object and paint it:
+We need to make the PlanetCard to be able to receive one Planet object and paint it:
 
 {{< highlight dart "linenos=true,hl_lines=3 5">}}
 class PlanetRow extends StatelessWidget {
@@ -130,7 +130,7 @@ class PlanetRow extends StatelessWidget {
 
 First we add a parameter to the constructor that receives a `Planet` object and stores it in a final field.
 
-Next, let's modify the planetThumbnail:
+Next, we will modify the planetThumbnail:
 
 {{< highlight dart "linenos=true, hl_lines=7">}}
   final planetThumbnail = new Container(
@@ -146,7 +146,7 @@ Next, let's modify the planetThumbnail:
   );
 {{< / highlight >}}
 
-The only change we did is to change the thumbnail path from a constant to the field image in the Planet object we received.
+The only change we did is to modify the thumbnail path from a constant to the field image in the Planet object we received.
 
 Also, in the previous article, we declared planetThumbnail and planetCard as final class members, in order to be able to reference the planet field, this declaration should be moved into the build function.
 
@@ -166,7 +166,7 @@ Let's add the rest of fields to the card.
 
 ## A cute card
 
-As we will be using three different text styles, we will create them as constant and reuse after.
+As we will be using three different text styles, we will create them as constant and reuse them later.
 
 ### Text styling
 
@@ -324,7 +324,7 @@ As both contents are very similar, we can extract them to a function:
     Widget _planetValue({String value, String image}) {
       return new Row(
         children: <Widget>[
-          new Image.asset("assets/img/ic_gravity.png", height: 12.0),
+          new Image.asset(image, height: 12.0),
           new Container(width: 8.0),
           new Text(planet.gravity, style: regularTextStyle),
         ]
@@ -359,7 +359,7 @@ The final result now looks like this:
 
 ## To be continued
 
-This episode we learned several things related to layout and styling:
+In this episode we learned several things related to layout and styling:
 
 * how to use different weights of the same font. If you come from Android native development, this looks like a small miracle ;)
 * how to simplify text styling by overriding styles. We will see a lot more on how to make this even easier and clean.
