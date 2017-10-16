@@ -21,11 +21,11 @@ Flutter uses the ListView widget to create lists and scrollable items. It's easy
 
 {{< highlight dart "linenos=true">}}
 new ListView(
-  children: Widget[] {
+  children: Widget<>[
     new Item1(),
     new Item2(),
     new Item3()
-  }
+  ]
 )
 {{< / highlight>}}
 
