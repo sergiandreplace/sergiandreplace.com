@@ -172,17 +172,84 @@ A simple layout that just shows the planet name and planet image in the screen:
 
 ![planet card](/img/sad-planet-detail.jpg)
 
+## The cool part, adding a Hero
 
+We will finish this article with something simple and really cool. Heroes.
+
+`Hero` is a Widget intended to perform easy animations between screens. To use it, just do these two little changes.
+
+In the PlanetRow class, modify the `planetThumbnail` to this:
+
+{{< highlight dart "linenos=true">}}
+final planetThumbnail = new Container(
+  margin: new EdgeInsets.symmetric(
+    vertical: 16.0
+  ),
+  alignment: FractionalOffset.centerLeft,
+  child: new Hero(
+      tag: "planet-hero-${planet.id}",
+      child: new Image(
+      image: new AssetImage(planet.image),
+      height: 92.0,
+      width: 92.0,
+    ),
+  ),
+);
+{{< / highlight>}}
+
+As you can see, we just wrapped the image in a `Hero` widget, we also added a tag, with the value "planet-hero-" plus the planet id.
+
+And now we do the same on the planet detail page.
+
+{{< highlight dart "linenos=true">}}
+class DetailPage extends StatelessWidget {
+
+  final Planet planet;
+
+  DetailPage(this.planet);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: new Container(
+        color: const Color(0xFF736AB7),
+        constraints: new BoxConstraints.expand(),
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text(planet.name),
+            new Hero(tag: "planet-hero-${planet.id}",
+              child: new Image.asset(
+                  planet.image,
+                  width: 96.0,
+                  height: 96.0,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+{{< / highlight>}}
+
+See? exactly the same for the image on the detail. 
+
+Now execute it, and you will see your planets flying around when moving from page to page (or back). Cool and easy, isn't it?
+
+The only thing to keep in mind, is that we can not have two heroes in the Widget tree with the same tag, that's why we added the id of the planet to the tag, and, in order to animate, the tag should be the same in both pages.
 
 ## To be continued
 
-Wow! a lot of information in this chapter for a simple list, a review:
+Ok, now we know a lot of things about routing:
 
-* We learned how to create a simple list using ListView.builder
-* We learned the basics of ScrollView
-* We learned what Slivers are and how to use some of them
-* We learned how to mimic the ListView.builder behaviour using Slivers
+* How to do a simple routing using routing tables
+* How to get back once we navigate to a page
+* How to do more advancing routing creating our own Router
+* How to add a bit of pizzazz to our transitions using the super cool heroes
 
-A lot to process. You can find the code on the repository, in the [Lesson_4_Planets_Flutter_Making_a_list_of_cards](https://github.com/sergiandreplace/flutter_planets_tutorial/tree/Lesson_4_Planets_Flutter_Making_a_list_of_cards) branch.
+If you don't want to write code, you can find this example on the branch [Lesson_5_Flutter_Planets_Navigation](https://github.com/sergiandreplace/flutter_planets_tutorial/tree/Lesson_5_Flutter_Planets_Navigation) of the repository.
 
-In next chapter, we will discuss about routers, navigation and heroes!
+For the next chapter, we will tidy up some things and start creating a georgeous detail learning some more things about layout.
+
+Stay tuned!
