@@ -17,7 +17,7 @@ Right now we have a fancy list of planets. But this list is not doing anything, 
 
 ## Routing and navigation
 
-Each screen of our application is called a Route in Flutter. And the responsible to go through these screens is a ```Navigator```. Similar to Android, the Routes are set in a navigation stack, even the two main navigation operations are ```push``` and ```pop```
+Each screen of our application is called a Route in Flutter. And the responsible to go through these screens is a `Navigator`. Similar to Android, the Routes are set in a navigation stack, even the two main navigation operations are `push` and `pop`
 
 
 ### Defining Routing at application level
@@ -34,11 +34,11 @@ new MaterialApp(
 ),
 {{< / highlight>}}
 
-As you can see, the ```routes``` parameter defines a dictionary of ```String``` keys. Each key is the name of the path to the page in web-ish format. Each item contain a function of type ```WidgetBuilder``` that receives the current context and returns the Widget to show as a page, in this case, a DetailPage.
+As you can see, the `routes` parameter defines a dictionary of `String` keys. Each key is the name of the path to the page in web-ish format. Each item contain a function of type `WidgetBuilder` that receives the current context and returns the Widget to show as a page, in this case, a DetailPage.
 
 There is another page declared, in this case, trough the home parameter, and its route is always "/".
 
-After declaring the route, we can do that our ```PlanetRow``` object navigates to this page on click. In order to do this, we should wrap our whole row widget in a ```GestureDetector``` Widget.
+After declaring the route, we can do that our `PlanetRow` object navigates to this page on click. In order to do this, we should wrap our whole row widget in a `GestureDetector` Widget.
 
 From this:
 
@@ -79,9 +79,9 @@ return new GestureDetector(
 );
 {{< / highlight>}}
 
-The ```GestureDetector``` has several parameters like ```onTap```, ```onDoubleTap```,  ```onLongPress```, etc, that allow us to handle all the physical interactions with the user. In this case, we only use the onTap parameter and we provide it with the function to execute in case of tap.
+The `GestureDetector` has several parameters like `onTap`, `onDoubleTap`,  `onLongPress`, etc, that allow us to handle all the physical interactions with the user. In this case, we only use the onTap parameter and we provide it with the function to execute in case of tap.
 
-This function executes the method ```pushNamed``` of the class ```Navigator``` and needs two parameters, the current context and the path to navigate to, "/detail" for the example.
+This function executes the method `pushNamed` of the class `Navigator` and needs two parameters, the current context and the path to navigate to, "/detail" for the example.
 
 Now we can create a simple detail page:
 
@@ -105,7 +105,72 @@ class DetailPage extends StatelessWidget{
 
 Several things happen here. First we created an Scaffold with an AppBar, if you execute this code, you'll see it automatically adds the back button as it detects we are in a secondary page (and it works!). Second, we created a button that executes the Navigator.pop() method, so it also gets back.
 
-The user then has three ways to get back: via back button, via the button we put on the center of the screen, and third one is different for Android or iOS. For android the back button on the phone works, for iOS, the left swipe gestire works.
+The user then has three ways to get back: via back button, via the button we put on the center of the screen, and third one is different for Android or iOS. For android the back button on the phone works, for iOS, the left swipe gesture works.
+
+## Passing parameters
+
+Unfortunately, the routing table method doesn't allow us to send parameters to the new screen (at least out of the box).
+
+In order to do this, we need to generate our `Route` on the fly.
+
+First, remove the routes parameter from our MaterialApp (or you can left it, but we will not use it).
+
+And modify the `GestureDetector` like this:
+
+{{< highlight dart "linenos=true">}}
+return new GestureDetector(
+  onTap: () => Navigator.of(context).push(new PageRouteBuilder(
+    pageBuilder: (_, __, ___) => new DetailPage(planet),
+  )),
+  child: new Container(
+    height: 120.0,
+    margin: const EdgeInsets.symmetric(
+      vertical: 16.0,
+      horizontal: 24.0,
+    ),
+    child: new Stack(
+      children: <Widget>[
+        planetCard,
+        planetThumbnail,
+      ],
+    ),
+  )
+);
+{{< / highlight>}}
+
+Now, instead of recovering the PageRoute from the table of routes with `pushNamed` we are creating a new one using the class `PageRoutBuilder`, and it has a parameter named `pageBuilder` that should return a new Widget to show as page, in this case, `DetailPage` receiving as a parameter the planet to show.
+
+Another interesting parameter from PageRouteBuilder is `transitionBuilder`. I dare you to play with it to modify the transitions used during navigation.
+
+Now, we need to modify the DetailPage to show something about the planet received.
+
+{{< highlight dart "linenos=true">}}
+class DetailPage extends StatelessWidget {
+
+  final Planet planet;
+
+  DetailPage(this.planet);
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      body: new Container(
+        constraints: new BoxConstraints.expand(),
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text(planet.name),
+            new Image.asset(planet.image, width: 96.0, height: 96.0,),
+          ],
+        ),
+      ),
+    );
+  }
+{{< / highlight>}}
+
+A simple layout that just shows the planet name and planet image in the screen:
+
+![planet card](/img/sad-planet-detail.jpg)
 
 
 
