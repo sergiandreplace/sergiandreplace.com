@@ -10,6 +10,7 @@ disqusShortname = "sergiandreplace"
 googleAnalytics = "UA-203854-6"
 publishDir = "docs"
 
+pygmentsUseClassic=false
 pygmentsUseClasses=true
 pygmentsCodeFences=true
 [author]
@@ -85,7 +86,7 @@ url = "/syntax.css"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
   url = "/index.xml"
 
-  [params]
+[params]
   # Customize date format use to render blog post date, categories and other
   # You must use date format used by Go Time package https://golang.org/pkg/time/
   # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
@@ -193,4 +194,7 @@ url = "/syntax.css"
   # Customize copyright value "© 2016 <CUSTOMIZATION>. All Rights Reserved"
   # [params.footer]
   #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
+
+    syntaxHighlighter = "highlight.js"
+
 
