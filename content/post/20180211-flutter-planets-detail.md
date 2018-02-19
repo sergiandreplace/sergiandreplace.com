@@ -7,7 +7,7 @@ categories = ["Flutter"]
 thumbnailImage="/img/planets-list.png"
 +++
 
-Afte a while struggling on how to continue and how to put all the things I wanted to explain together I have decided to follow the KISSS methodolgy (Keep It Simple, Stupid Sergi) and continue with a simpler example. As the Planets tutorial was focused on UI, I didn't want to include Stateful Widgets. Decided, we will continue with the planet detail screen.
+After a while struggling on how to continue and how to put all the things I wanted to explain together I have decided to follow the KISSS methodolgy (Keep It Simple, Stupid Sergi) and continue with a simpler example. As the Planets tutorial was focused on UI, I didn't want to include Stateful Widgets. Decided, we will continue with the planet detail screen.
 
 
 <!--more-->
