@@ -7,15 +7,15 @@ categories = ["Flutter"]
 thumbnailImage = "/img/planets-preview.png"
 +++
 
-Flutter is the new, shiny and cool way to write apps for Android and iOS. 
+Flutter is the new, shiny and cool way to write apps for Android and iOS.
 
-I felt in love with Flutter during the Android Developer Days in Krakow, and I've decided to start a set of samples on how to create Flutter apps from a design. 
+I felt in love with Flutter during the Android Developer Days in Krakow, and I've decided to start a set of samples on how to create Flutter apps from a design.
 
 I've spent several days playing with it, aaaand, this is the result.
 
-<!--more--> 
+<!--more-->
 
-After browsing for a while on [material.uplabs.com](http://material.uplabs.com), I've picked up a nice sample on a Space Travel book app from Vijay Verma: 
+After browsing for a while on [material.uplabs.com](http://material.uplabs.com), I've picked up a nice sample on a Space Travel book app from Vijay Verma:
 https://www.uplabs.com/posts/space-travel-ui. Checkout his other designs, they are really cool.
 
 I've contact him, and he send me the original assets. (Thanks Vijay!)
@@ -89,10 +89,10 @@ class GradientAppBar extends StatelessWidget {
 
 
   GradientAppBar(this.title);
-  
+
   @override
   Widget build(BuildContext context) {
-  
+
     return new Container(
       height: barHeight,
       decoration: new BoxDecoration(color: Colors.blue),
@@ -163,7 +163,7 @@ And modify your container to add the status bar height to the desired height and
 ```dart
     ...
     return new Container(
-      padding: new EdgeInsets.only(top: statusbarHeight),
+      padding: new EdgeInsets.only(top: statusBarHeight),
       height: statusBarHeight + barHeight,
     ...
 ```
@@ -181,7 +181,7 @@ The last part is to achieve the gradient background. We only need to change the 
       decoration: new BoxDecoration(
         gradient: new LinearGradient(
           colors: [
-            const Color(0xFF3366FF), 
+            const Color(0xFF3366FF),
             const Color(0xFF00CCFF),
           ]
           begin: const FractionalOffset(0.0, 0.0),
