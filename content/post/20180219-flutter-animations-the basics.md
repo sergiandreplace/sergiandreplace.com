@@ -51,11 +51,11 @@ abstract class Animation<T> extends Listenable implements ValueListenable<T> {
 
 We are going to review it line by line. Maybe I'm being exhaustive, but fully understanding this class and its purpose is the key to understanding animations:
 
-* Line 1: we declare the class as abstract, based on a generic `T`. It extends `Listenable` and implements `ValueListenable<T>` (we will see the use of these on the next lines)
+* Line 1: we declare the class as abstract, based on a generic `T`. It extends `Listenable` and implements `ValueListenable<T>` (we will see the use of these on the next lines).
 
 * Line 5: `addListener` is inherited from Listenable. This is an abstract method, so we are forced to implement it in any child. The purpose of this method is to add listeners that will listen to changes in the value.
 
-* Line 6: `removeListener` is the oposite of the previous, it remove a listener from our list of listeners. Also inherited from `Listenable`
+* Line 6: `removeListener` is the oposite of the previous, it removes a listener from our list of listeners. Also inherited from `Listenable`.
 
 Keep in mind that these two methods are expected to add and remove listeners for the value, but this is a de facto contract, as nothing forces us to follow this contract. This kind of "this is what you are supposed to do, but, hey, up to you" contracts are very usual in the animation framework, and they are what allows us to bend the rules to create new exciting stuff (don't worry, we will not do it, for the moment).
 
@@ -65,7 +65,7 @@ Keep in mind that these two methods are expected to add and remove listeners for
 
   * `forward`: the animation is playing from the starting point to the ending point (it could not be the same than the start and the beginning).
 
-  * `reverse`: the opposite of `forward`, basically, the animation is playing backwards
+  * `reverse`: the opposite of `forward`, basically, the animation is playing backwards.
 
   * `completed`: opposite of dismissed, animation is stopped at the last frame.
 
@@ -73,7 +73,7 @@ Keep in mind that these two methods are expected to add and remove listeners for
 
 * Line 19 & 22: Just syntax sugar to check if the status of the animation is `dismissed` or `completed`. Same than checking the value of `status` but nicer to read when used.
 
-Ok, that's nice, but not useful by itself. As we said before, this class is intended to be extended, and we will review the main child class, `AnimationController`
+Ok, that's nice, but not useful by itself. As we said before, this class is intended to be extended, and we will review the main child class, `AnimationController`.
 
 ## The AnimationController class
 
@@ -118,7 +118,7 @@ Also, despite you can set any values, most of the time we will use the range 0.0
 
 We mentioned the class `TickerProvider` before. Obviously, this class provides `Ticker` objects, but, what is a `Ticker`? Is just a class wich is able to send a signal, like if it is saying "Now!, Now!, Now!, ...". Default implementations are used to mark the frames of an animation and to help us to reach a specific number of FPS (Frames Per Second).
 
-The easiest way to get a `TickerProvider` is to add a Mixin to our class. We have to basic implementations: `SingleTickerProviderStateMixin` and `TickerProviderStateMixin`. The first one provides only one Ticker and the second one provides several ones. So, first one is more efficient if you have a single `AnimationController`
+The easiest way to get a `TickerProvider` is to add a Mixin to our class. We have two basic implementations: `SingleTickerProviderStateMixin` and `TickerProviderStateMixin`. The first one provides only one Ticker and the second one provides several ones. So, first one is more efficient if you have a single `AnimationController`.
 
 If you are not sure what a mixin is, check the [Dart documentation about mixins](https://www.dartlang.org/articles/language/mixins).
 
@@ -224,9 +224,9 @@ Note: the freezing before finishing the animation is due to the gif recording, t
 
 Nothing really exciting, but trust me, understanding this basic example, will make much easier to make complex animations.
 
-I think this is enough for today, but, I want to try something new. Allow me to suggest experiments you can do. Trying to expain EVERYTHING you can do with animations will take me a couple of lifes. An important part is you playing around with the stuff I explain, so, try this little experiment:
+I think this is enough for today, but, I want to try something new. Allow me to suggest experiments you can do. Trying to explain EVERYTHING you can do with animations will take me a couple of lifes. An important part is you playing around with the stuff I explain, so, try this little experiment:
 
-* If you tap the text while animating, the animation will start again. Do you know how to avoid this? so, the animation only starts on tap when the "Tap me!" is shown.
+* If you tap the text while animating, the animation will start again. Do you know how to avoid this? so, the animation only starts on tap when "Tap me!" is shown.
 * Try to use the value of the animation not to show a number, but to set the font size of the text.
 * Keep in mind that value goes from 0.0 to 1.0, obviously, if you animate fontSize from 0.0 to 1.0 you won't see anything. There are several ways to fix this, but I'm not going to tell you how, do your homework.
 * If you achieve it, don't stop here, do the animation go and back, animate other properties, try to make the animation configurable, etc. The sky is the limit!
