@@ -1,4 +1,4 @@
-baseURL = "http://sergiandreplace.com/"
+baseURL = "https://sergiandreplace.com/"
 languageCode = "en-us"
 title = "Sergi & Replace"
 theme = "hugo-mytranquilpeak-theme"
@@ -15,7 +15,7 @@ pygmentsUseClasses=true
 pygmentsCodeFences=true
 [author]
 twitter="sergiandreplace"
-picture="http://sergiandreplace.com/img/me.png"
+picture="https://sergiandreplace.com/img/me.png"
 location="Barcelona"
 name="Sergi & Replace"
 bio="Look Ma! I'm on the internet!"
