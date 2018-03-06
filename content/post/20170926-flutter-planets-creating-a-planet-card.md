@@ -148,7 +148,7 @@ class PlanetRow extends StatelessWidget {
       ),
       child: new Stack(
         children: <Widget>[
-          planetCard
+          planetCard,
           planetThumbnail,
         ],
       )
