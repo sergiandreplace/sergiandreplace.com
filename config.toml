@@ -27,7 +27,7 @@ googlePlus="sergi.martinez"
 url = "/syntax.css"
 
 [permalinks]
-  post = "/:year/:month/:slug/"
+  post = "/:slug/"
 
 [taxonomies]
   tag = "tags"
