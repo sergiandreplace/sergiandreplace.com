@@ -1,7 +1,7 @@
 +++
 date = "2018-03-11"
 draft = false
-title = "Flutter animations: The basics"
+title = "Flutter animations: Usin AnimationController and introducing Tweens"
 tags = ["Android", "iOS", "Flutter", "Animations", "Open Source"]
 categories = ["Flutter"]
 thumbnailImage="img/animations-basic-animationcontroller.png"
