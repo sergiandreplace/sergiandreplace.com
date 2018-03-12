@@ -5,6 +5,9 @@ title = "Planets-Flutter: routing and navigation"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
 thumbnailImage="/img/planets-list.png"
+aliases = [
+  "/2017/12/planets-flutter-routing-and-navigation/"
+]
 +++
 
 Once the DevFest season is closed, is time to get back to the Flutter Planets tutorial. This time, we will see how to make the list a bit more alive by navigating into the detail page of each planet.

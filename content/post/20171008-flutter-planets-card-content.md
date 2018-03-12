@@ -5,6 +5,9 @@ title = "Planets-Flutter: adding content to the card"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
 thumbnailImage="/img/planet-card-full-text.png"
+aliases = [
+  "/2017/10/planets-flutter-adding-content-to-the-card/"
+]
 +++
 
 In the previous article, we learned how to create a card to show some information about a planet. Now it is time to put that information in the card.
