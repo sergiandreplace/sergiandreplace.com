@@ -5,6 +5,9 @@ title = "Planets-Flutter: from design to app"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
 thumbnailImage = "/img/planets-preview.png"
+aliases = [
+  "/2019/09/planets-flutter-from-design-to-app/"
+]
 +++
 
 Flutter is the new, shiny and cool way to write apps for Android and iOS.
