@@ -5,6 +5,9 @@ title = "Planets-Flutter: creating a list of planets"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
 thumbnailImage="/img/planets-list.png"
+aliases = [
+  "/2017/10/planets-flutter-creating-a-list-of-planets/"
+]
 +++
 
 In the previous article we learned how to create a card to show information for a planet. Now is time to create a list of these cards showing all the planets.

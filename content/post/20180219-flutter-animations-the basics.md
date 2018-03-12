@@ -5,6 +5,9 @@ title = "Flutter animations: The basics"
 tags = ["Android", "iOS", "Flutter", "Animations", "Open Source"]
 categories = ["Flutter"]
 thumbnailImage="img/animations-basic-animationcontroller.png"
+aliases = [
+  "/2018/03/flutter-animations-the-basics/"
+]
 +++
 
 Animations in Flutter are awesome. Starting from a simple idea, the framework evolves this idea into objects that can be chained and composited to make jaw dropping animations. But, there is a lot of information to grasp, so, I want to start a new series of articles centered on the use of the Flutter animations. We will start with the simplest concepts and move to awesomeness step by step.

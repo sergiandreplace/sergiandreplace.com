@@ -5,6 +5,9 @@ title = "Planets-Flutter: creating a Planet card"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
 thumbnailImage="/img/planets-card-sample.png"
+aliases = [
+  "/2017/09/planets-flutter-creating-a-planet-card/"
+]
 +++
 
 In the [previous article](/2017/09/planets-flutter-from-design-to-app/) we saw how to create a custom App bar without using the class ```Appbar``` in order to make easier to get a gradient background and a centered title.

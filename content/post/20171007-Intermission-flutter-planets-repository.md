@@ -5,6 +5,9 @@ title = "Intermission: Planets-Flutter repository"
 tags = ["Android", "iOS", "Flutter", "Planets", "Open Source"]
 categories = ["Flutter"]
 thumbnailImage = "/img/planets-preview.png"
+aliases = [
+  "/2017/10/intermission-planets-flutter-repository/"
+]
 +++
 
 While finishing the next article on the Flutter-planets series, I've decided to create a repository to sync branches with articles
