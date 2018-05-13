@@ -1,17 +1,17 @@
 +++
 date = "2018-03-11"
 draft = false
-title = "Flutter animations: Usin AnimationController and introducing Tweens"
+title = "Flutter animations: Using AnimationController and introducing Tweens"
 tags = ["Android", "iOS", "Flutter", "Animations", "Open Source"]
 categories = ["Flutter"]
 thumbnailImage="img/animations-basic-animationcontroller.png"
 +++
 
-In this article we will see how to properly use AnimationController and we will make an introduction the use of Tweens.
+In this article we will see how to properly use `AnimationController` and we will make an introduction the use of Tweens.
 
 <!--more-->
 
-## Recap
+## Recap 
 
 In the last article we introduced the `AnimationController` and we analysed how it works. We will now use it properly in an example to animate an object.
 
@@ -59,7 +59,7 @@ If you do not understand this code, check again previous article, because, as we
 
 ## Fly me to the moooon...
 
-Ok, what we want is to put a plane on screen moving from one side to another. We will use a simple `Icon` to get the plane, and we will put it on position using a `FractionallySizedBox`. Let's see the code:
+Ok, what we want is to put a plane on screen moving from one side to another. We will use a simple `Icon` to get the plane, and we will align it using a `FractionallySizedBox`. Let's see the code:
 
 {{< highlight dart "linenos=true">}}
   @override
@@ -88,7 +88,7 @@ The only child is a `FractionallySizedBox`. This widget allows us to position an
 
 For the size we use `heightFactor` and `widthFactor` to set the percentage of the parent (the `Stack`) that this box will take. I've added 0.2 as an approx value, sure we can calculate the appropiate one but that's an exercise for the reader.
 
-The important param of `FractionallySizedBox` is alignment. This receives an `Alignment` object with two params, x and y, that aligns the child horizontally and vertically. For x, a value of -1.0 will mean completely aligned to the left of the parent, 1.0 will mean completely aligned to the right and 0.0 will mean centered on the parent. Same for y but for vertical alignemnt.
+The important param of `FractionallySizedBox` is alignment. This receives an `Alignment` object with two params, x and y, that aligns the child horizontally and vertically. For x, a value of -1.0 will mean completely aligned to the left of the parent, 1.0 will mean completely aligned to the right and 0.0 will mean centered on the parent. Same for y but applied to vertical alignment.
 
 I really recommend playing around with those to understand how they work.
 
@@ -132,9 +132,9 @@ We just need to make the animation run forward or reverse every time it arrives 
       duration: new Duration(seconds: 2),
       vsync: this
     )
-      ..addListener(() {
-        this.setState(() {});
-      })
+    ..addListener(() {
+      this.setState(() {});
+    })
     ..addStatusListener((status){
       if (status == AnimationStatus.completed) {
         _controller.reverse();
@@ -200,7 +200,7 @@ And now, the magic, just below, we add:
 {{< highlight dart "linenos=true">}}
     _animation = _tween.animate(_controller);
 
-  	_controller.forward();
+    _controller.forward();
 {{< / highlight>}}
 
 Booom! What's going on!?! What we are doing is to execute the method `animate` of our tween to generate a NEW animation. This new animation wraps the tween and the controller, and will be pumped by the controller ticks, that's why we still execute `forward` on the controller.
@@ -226,7 +226,7 @@ These objects will change from (-1.0, 0.0) to (1.0, 0.0) gradually and back.
 
 ## This is just an introduction
 
-Ẃe just scratched the surface of the tweens, in the next article we will see other crazy things you can do with other tweens (color! opacity! rounded corners!). çBut first digest this. 
+Ẃe just scratched the surface of the tweens, in the next article we will see other crazy things you can do with other tweens (color! opacity! rounded corners!). But first digest this. 
 
 Try to move the plane different, or from another range. Try to have two things moving around with two tweens going in opposite directions. Get crazy.
 
@@ -234,6 +234,56 @@ Oh! almost forgot!
 
 ## The plane should return
 
+Now we want our airplane to face the right direction in each case (planes do now fly backwards, as far as I know). First, we create an '_angle' variable and two constants with the different rotation:
 
+{{< highlight dart "linenos=true">}}
+  static const FACE_LEFT_ANGLE = -PI / 2;
+  static const FACE_RIGHT_ANGLE = PI / 2;
+
+  double _angle =  FACE_RIGHT_ANGLE;
+
+{{< / highlight>}}
+
+Then, we need to swap between the two constant values depending on the direction of the animation.
+
+{{< highlight dart "linenos=true">}}
+      if (status == AnimationStatus.completed) {
+        _controller.reverse();
+        _angle = FACE_LEFT_ANGLE;
+      } else if (status == AnimationStatus.dismissed) {
+        _controller.forward();
+        _angle = FACE_RIGHT_ANGLE;
+      }
+{{< / highlight>}}
+
+And simply rotate the Icon depending on the direction of the animation with a simple `Transform.rotate` widget.
+
+{{< highlight dart "linenos=true">}}
+    return new Stack(
+      fit: StackFit.expand,
+      children: <Widget>[
+        new FractionallySizedBox(
+          heightFactor: 0.2,
+          widthFactor: 0.2,
+          alignment: _animation.value,
+          child: new Transform.rotate(
+            angle: _angle,
+            child: new Icon(
+              Icons.flight,
+              size: 80.0,
+            ),
+          )
+        ),
+      ],
+    );
+{{< / highlight>}}
+
+## Enough for today
+
+We introduced how to use the Animation controller to move an object around and used the `AlignmentTween` to map the value produced by the `AnimationController` to meaningful values for the `FractionallySizedBox.alignment` property.
+
+In the next part we will use other Tweens and introduce Curves, but I really recommend you to play around with the concepts introduced in this article as they are important to master animations in Flutter.
+
+You can find the code of this article on Github in the [flutter_animations](https://github.com/sergiandreplace/flutter_animations) repository on the [using_animation_controller.dart](https://github.com/sergiandreplace/flutter_animations/blob/master/lib/pages/using_animation_controller.dart) file. 
 
 Stay tuned for more tutorials and articles!
