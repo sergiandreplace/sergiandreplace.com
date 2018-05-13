@@ -1,5 +1,5 @@
 +++
-date = "2018-03-11"
+date = "2018-05-13"
 draft = false
 title = "Flutter animations: Using AnimationController and introducing Tweens"
 tags = ["Android", "iOS", "Flutter", "Animations", "Open Source"]
